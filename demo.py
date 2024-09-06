@@ -7,7 +7,7 @@ if __name__ == "__main__":
     color_labels = ["DV", "CV", "DVH"]
     # 50 images
     image_paths = [
-        [f"/Users/weidf/Code/biomed/em_proofread/data/cifar10/1_{x}.png"]
+        [f"data/cifar10/1_{x}.png"]
         for x in range(1, 11)
     ] * 5
     image_labels = np.random.randint(0, len(color_labels), len(image_paths))
