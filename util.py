@@ -4,10 +4,10 @@ import cv2
 
 def mkdir(folder_name):
     if not os.path.exists(folder_name):
-        os.mkdir(folder_name)
+        os.makedirs(folder_name)
 
 
-def write_text(filename, content):
+def write_txt(filename, content):
     with open(filename, "w") as a:
         if isinstance(content, (list,)):
             for ll in content:
@@ -18,7 +18,7 @@ def write_text(filename, content):
             a.write(content)
 
 
-def read_text(filename):
+def read_txt(filename):
     with open(filename) as a:
         content = a.readlines()
     return content
