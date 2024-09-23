@@ -5,11 +5,11 @@ import numpy as np
 from util import mkdir, read_txt, write_txt
 
 COLORS = [
-    "red",
-    "green",
     "black",
-    "white",
+    "red",
     "yellow",
+    "blue",
+    "green",
     "gray",
     "maroon",
     "purple",
@@ -140,7 +140,7 @@ class HtmlGenerator(object):
         self, image_paths, image_labels=None, color_labels=None, use_php=False
     ):
         if image_labels is None:
-            image_labels = np.zeros(len(image_paths))
+            image_labels = np.zeros(len(image_paths), dtype=int)
         if color_labels is None:
             color_labels = ["undefined"]
 
@@ -162,7 +162,7 @@ class HtmlGenerator(object):
                 .im0{position:absolute;top:0px;left:0px;height:100%;}
                 .im1{position:relative;top:-75px;left:-75px;opacity:0.7;}
                 .im2{position:absolute;top:-75px;left:-75px;opacity:0.3;}
-                .crop{position:relative;left:0;top:0;overflow:hidden;width:150px;height:150px;}
+                .crop{position:relative;left:0;top:0;overflow:hidden;width:900px;height:270px;}
                 </style>
                 """
                 # color scheme
@@ -256,7 +256,7 @@ class HtmlGenerator(object):
                 """
                 out += """
                 $("#next").click(function(){
-                    window.location = 'test_%d/test_%d.html'
+                    window.location = '../test_%d/test_%d.html'
                 });
                 """ % (
                     uid,
